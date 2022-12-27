@@ -42,18 +42,17 @@ class EETextureViewer: MTKView {
 
   private var intermediateTexture: MTLTexture?
 
-  var YpCbCrMatrix_Full = matrix_float4x4(columns: (vector_float4(1.0,  0.0,  1.402, 0.0),
-                                                    vector_float4(1.0,  -0.34414, -0.71414, 0.0),
-                                                    vector_float4(1.0,  1.772,  0.0, 0.0),
+  var YpCbCrMatrix_Full = matrix_float4x4(columns: (vector_float4(1.15, 0.0, 1.6123, 0.0),
+                                                    vector_float4(1.15, -0.395761, -0.821261, 0.0),
+                                                    vector_float4(1.15, 2.0378, 0.0, 0.0),
                                                     vector_float4(0.0, 0.0, 0.0, 1.0)))
 
-
-  var YpCbCrMatrix_Video = matrix_float4x4(columns: (vector_float4(1.1643,  0.0,  1.5958, 0.0),
-                                                     vector_float4(1.1643,  -0.39173, -0.81290, 0.0),
-                                                     vector_float4(1.1643,  2.017,  0.0, 0.0),
+  var YpCbCrMatrix_Video = matrix_float4x4(columns: (vector_float4(1.1643, 0.0, 1.5958, 0.0),
+                                                     vector_float4(1.1643, -0.39173, -0.81290, 0.0),
+                                                     vector_float4(1.1643, 2.017, 0.0, 0.0),
                                                      vector_float4(0.0, 0.0, 0.0, 1.0)))
 
-  var YpCbCrOffsets_FullRange = Float4([0.0, 0.5, 0.5, 0.0])
+  var YpCbCrOffsets_FullRange = Float4([0.0625, 0.5, 0.5, 0.0])
   var YpCbCrOffsets_VideoRange = Float4([0.0625, 0.5, 0.5, 0.0])
 
   var YpCbCrMatrixFullRangeBuffer: MTLBuffer!
